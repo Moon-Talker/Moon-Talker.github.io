@@ -1,0 +1,235 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  main {
+    padding: 2rem;
+  }
+  
+  /* Interactive UI elements */
+  .interactive {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .slider-container {
+    width: 200px;
+    height: 50px;
+    background-color: #f0f0f0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .slider {
+    width: 100px;
+    height: 50px;
+    background-color: #007bff;
+    position: absolute;
+    left: 0;
+    transition: left 0.3s ease-in-out;
+  }
+  
+  .slider-container:hover .slider {
+    left: 200px;
+  }
+
+  .slider2 {
+    width: 150px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+  }
+  
+  
+  .slider2::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: #007bff;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+  }
+  
+  .toggle input {
+    display: none;
+  }
+  
+  .toggle .slider2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .toggle input:checked + .slider2 {
+    background-color: #007bff;
+    transform: translateX(30px);
+  }
+  
+  /* Pseudo-elements */
+  .pseudo-elements {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .decorative {
+    width: 200px;
+    height: 200px;
+    background-color: #007bff;
+    position: relative;
+  }
+  
+  .decorative::before {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+  
+  /* 3D Elements */
+  .three-d-elements {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  div.espacio3D {
+    width: 300px;
+    height: 300px;
+    margin: 3em auto 0 auto;
+    border: 1px solid #007bff;
+    position: relative;
+    perspective-origin: center -50%;
+    perspective: 500px;
+    transform: scale(0.75);
+  }
+  
+  div.cubo3D {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transform: translateZ(-150px);
+    animation-name: gira;
+    animation-duration: 3000ms;
+    animation-iteration-count: infinite;
+  }
+  
+  div.base {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(0,0,0,0.15);
+    transform: translateX(75px) translateY(75px) rotateX(90deg) translateZ(-200px);
+    box-shadow: 0 0 50px 100px rgba(0,0,0,0.15);
+  }
+  aside.cara {
+    position: absolute;
+    width: 298px;
+    height: 298px;
+    background-color: rgba(255,150,0,0.25);
+    border: 1px solid rgba(255,150,0,0.75);
+    color: #08f;
+    font-size: 3em;
+    text-align: center;
+    line-height: 298px;
+    box-shadow: 0px 0px 5px rgba(255,150,0,0.75);
+  }
+  
+  aside.cara1 { /* Frente */
+    transform: translateZ(150px);
+  }
+  
+  aside.cara2 { /* Atrás */
+    transform: rotateY(180deg) translateZ(150px);
+  }
+  
+  aside.cara3 { /* Izquierda */
+    transform: rotateY(-90deg) translateZ(150px);
+  }
+  
+  aside.cara4 { /* derecha */
+    transform: rotateY(90deg) translateZ(150px);
+  }
+  
+  aside.cara5 { /* abajo */
+    transform: rotateX(-90deg) translateZ(150px);
+  }
+  
+  aside.cara6 { /* arriba */
+    transform: rotateX(90deg) translateZ(150px);
+  }
+  
+  @keyframes gira {
+    0% {
+      transform: translateZ(-150px) rotateY(0deg);
+    }
+    100% {
+      transform: translateZ(-150px) rotateY(360deg);
+    }
+  }
+  
+  /* Custom Cursors */
+  .custom-cursors {
+    text-align: center;
+  }
+  
+  .custom-cursor {
+    width: 30px;
+    height: 30px;
+    background-color: #007bff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: url('icons8-cursor-50.png'), auto;
+  }
+  
